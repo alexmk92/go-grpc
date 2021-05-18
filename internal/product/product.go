@@ -27,14 +27,14 @@ type Service struct {
 // Returns a new product service
 func New(store Store) Service {
     return Service{
-        Store: store
+        Store: store,
     }
 }
 
 // Retrieves a product based on the ID
 func (s Service) GetProductById(ctx context.Context, id string) (Product, error) {
     product, err := s.Store.GetProductById(id)
-    if err != nill {
+    if err != nil {
         return Product{}, err
     }
 
@@ -51,7 +51,7 @@ func (s Service) InsertProduct(ctx context.Context, product Product) (Product, e
 }
 
 // Delete a product
-func (s Service) Delete(ctx context.Context, id string) error {
+func (s Service) DeleteProduct(id string) error {
     err := s.Store.DeleteProduct(id)
     if err != nil {
         return err
