@@ -1,4 +1,4 @@
-//go:generate mockgen -destination=product_mocks_test.go -package=product -package=product github.com/alexmk92/go-grpc/internal/product Store
+//go:generate mockgen -destination=product_mocks_test.go -package=product github.com/alexmk92/go-grpc/internal/product Store
 package product
 
 
