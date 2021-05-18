@@ -13,7 +13,7 @@ type Product struct {
 
 // Defines the interface we expect our db to conform to
 type Store interface {
-    GetProductById(id string) (Product, error)
+    GetProductByID(id string) (Product, error)
     InsertProduct(product Product) (Product, error)
     DeleteProduct(id string) error
 }
@@ -33,7 +33,7 @@ func New(store Store) Service {
 
 // Retrieves a product based on the ID
 func (s Service) GetProductById(ctx context.Context, id string) (Product, error) {
-    product, err := s.Store.GetProductById(id)
+    product, err := s.Store.GetProductByID(id)
     if err != nil {
         return Product{}, err
     }
